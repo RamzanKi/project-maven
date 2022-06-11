@@ -56,6 +56,31 @@
 
     <build>
 
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.java</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <targetPath>META-INF/</targetPath>
+            </resource>
+            <resource>
+                <directory>${project.build.directory}/dependency/</directory>
+                <includes>
+                    <include>*.jar</include>
+                </includes>
+                <targetPath>lib/</targetPath>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
